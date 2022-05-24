@@ -1,0 +1,44 @@
+/*
+    ier_hazi
+    ---------------------------
+
+    Jason Project File
+
+    This file defines the initial state of the MAS
+
+    Jason 2.5.1
+    május 15, 2022 - 15:47:33
+*/
+
+MAS ier_hazi {
+
+    infrastructure: Local
+
+    environment: Uveghaz
+
+    agents: 
+        ontozo;
+		
+		nedv_tap_mero;
+		
+		master;
+
+      /*  klima;
+
+        parologtato;
+
+        nyilaszaro;
+
+        permetezo;
+
+        vilagitas;
+
+        ablak_sotetito;
+
+        ho_para_mero;
+
+        fenyerzekelo;
+
+        tragyazo;*/
+
+}
