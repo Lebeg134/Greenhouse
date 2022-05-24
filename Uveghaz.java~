@@ -74,13 +74,19 @@ public class Uveghaz extends Environment {
     public boolean executeAction(String agName, Structure action) {
 
          System.out.println("Agent "+agName+" is doing "+action);
+		  clearPercepts();
         if (action.getFunctor().equals("wet")) { 
              soilwetness++;
         }
-
-		if(soilwetness>25){
+		if(soilwetness<=25){
+			addPercept(drys);
+		}
+		if(soilwetness>25 && soilwetness < 30){
 			 System.out.println("xdd");
 			addPercept(oks);
+		}
+		if(soilwetness<=30){
+			addPercept(wets);
 		}
 		informAgsEnvironmentChanged();
         return true;

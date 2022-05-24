@@ -31,14 +31,14 @@ MAS ier_hazi {
 
         permetezo;
 
-        vilagitas;
-
+        ho_para_mero;*/
+		
         ablak_sotetito;
-
-        ho_para_mero;
+		
+		vilagitas;
 
         fenyerzekelo;
 
-        tragyazo;*/
+        tragyazo;
 
 }
