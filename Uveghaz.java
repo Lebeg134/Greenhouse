@@ -15,8 +15,24 @@ import java.util.logging.*;
 
 
 public class Uveghaz extends Environment {
+	public static Uveghaz Instance;
+	public Plant plant;
+	public Uveghaz(){
+		if (Instance == null)
+			Instance = this;
+		plant = new Plant(
+				15,25,
+				15,25,
+				30,35,
+				15, 20,
+				15,
+				25,30
+		);
+	}
 
-
+	public void setPlant(Plant plant) {
+		this.plant = plant;
+	}
 
 	Literal hot = Literal.parseLiteral("hot(temperature)");
 	Literal okt = Literal.parseLiteral("ok(temperature)");
@@ -116,91 +132,91 @@ public class Uveghaz extends Environment {
              humidity++;
         }
 		
-		if(humidity<=15){
+		if(humidity<=plant.dry){
 			addPercept(dry);
 		}
-		if(humidity>15 && humidity<25){
+		if(humidity>plant.dry && humidity<plant.damp){
 			addPercept(okh);
 		}
-		if(humidity>=25){
+		if(humidity>=plant.damp){
 			addPercept(damp);
 		}
-		if(outhumidity<=15){
+		if(outhumidity<=plant.dryhm){
 			addPercept(dryo);
 		}
-		if(outhumidity>15 && outhumidity<25){
+		if(outhumidity>plant.dryhm && outhumidity<plant.damphm){
 			addPercept(okho);
 		}
-		if(outhumidity>=25){
+		if(outhumidity>=plant.damphm){
 			addPercept(dampo);
 		}
 		
-		if(temperature<=30){
+		if(temperature<=plant.cold){
 			addPercept(cold);
 		}
-		if(temperature>30 && temperature<35){
+		if(temperature>plant.cold && temperature<plant.hot){
 			addPercept(okt);
 		}
-		if(temperature>=35){
+		if(temperature>=plant.hot){
 			addPercept(hot);
 		}
 		
-		if(outtemperature<=30){
+		if(outtemperature<=plant.cold){
 			addPercept(coldo);
 		}
-		if(outtemperature>30 && outtemperature<35){
+		if(outtemperature>plant.cold && outtemperature<plant.hot){
 			addPercept(okto);
 		}
-		if(outtemperature>=35){
+		if(outtemperature>=plant.hot){
 			addPercept(hoto);
 		}
 		if(windowopen){
-		if(brightness+outbrightness<=15){
+		if(brightness+outbrightness<=plant.dark){
 			addPercept(dark);
 		}
-		if(brightness+outbrightness>15 && brightness+outbrightness<20){
+		if(brightness+outbrightness>plant.dark && brightness+outbrightness< plant.bright){
 			addPercept(okl);
 		}
-		if(brightness+outbrightness>=20){
+		if(brightness+outbrightness>= plant.bright){
 			addPercept(bright);
 		}}
 		else{
-			if(brightness<=15){
+			if(brightness<=plant.dark){
 			addPercept(dark);
 		}
-		if(brightness>15 && brightness<20){
+		if(brightness>plant.dark && brightness<plant.bright){
 			addPercept(okl);
 		}
-		if(brightness>=20){
+		if(brightness>=plant.bright){
 			addPercept(bright);
 		}
 		}
 		
-		if(outbrightness<=15){
+		if(outbrightness<=plant.dark){
 			addPercept(darko);
 		}
-		if(outbrightness>15 && outbrightness<20){
+		if(outbrightness>plant.dark && outbrightness<plant.bright){
 			addPercept(oklo);
 		}
-		if(outbrightness>=20){
+		if(outbrightness>=plant.bright){
 			addPercept(brighto);
 		}
 		
-		if(fertilization<=15){
+		if(fertilization<=plant.fertilization){
 			addPercept(nfert);
 		}
-		if(fertilization>15){
+		if(fertilization>plant.fertilization){
 			addPercept(fert);
 		}
 		
 		
-		if(soilwetness<=25){
+		if(soilwetness<=plant.drys){
 			addPercept(drys);
 		}
-		if(soilwetness>25 && soilwetness < 30){
+		if(soilwetness>plant.drys && soilwetness < plant.wets){
 			addPercept(oks);
 		}
-		if(soilwetness<=30){
+		if(soilwetness<=plant.wets){
 			addPercept(wets);
 		}
 		informAgsEnvironmentChanged();
