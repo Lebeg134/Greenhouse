@@ -21,24 +21,22 @@ MAS ier_hazi {
 		
 		nedv_tap_mero;
 		
-		master;
+		master agentArchClass GreenhouseGUI;
 
-      /*  klima;
+        klima;
 
+		nyilaszaro;
+		
         parologtato;
 
-        nyilaszaro;
-
-        permetezo;
-
-        vilagitas;
-
-        ablak_sotetito;
-
         ho_para_mero;
+		
+        ablak_sotetito;
+		
+		vilagitas;
 
         fenyerzekelo;
 
-        tragyazo;*/
+        tragyazo;
 
 }
