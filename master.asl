@@ -3,6 +3,11 @@
 !okf.
 !okt.
 !okh.
+!fris.
+
++!fris 
+
++!fris <- friss;.wait(500);!fris.
 
  +!okh : damp(humidity)[source(ho_para_mero)] & ok(houtside)[source(ho_para_mero)]  <- .send(nyilaszaro,achieve,hot(temperature)); .wait(500);!okh.//hot == open
   +!okh : damp(humidity)[source(ho_para_mero)] & not ok(houtside)[source(ho_para_mero)]  <- .send(klima,achieve,ok(humidity)); .wait(500);!okh.
